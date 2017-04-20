@@ -1,0 +1,768 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>koa-better-body (v3.0.2)</a>
+</h1>
+<h4>Full-featured [koa][] body parser! Support parsing text, buffer, json, json patch, json api, csp-report, multipart, form and urlencoded bodies. Works for koa@1, koa@2 and will work for koa@3.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-better-body">module koa-better-body</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.koa-better-body">
+            function <span class="apidocSignatureSpan"></span>koa-better-body
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils">
+            function <span class="apidocSignatureSpan">koa-better-body.</span>utils
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-better-body.utils">module koa-better-body.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.utils">
+            function <span class="apidocSignatureSpan">koa-better-body.</span>utils
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.bodyParsers">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>bodyParsers
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.defaultOptions">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>defaultOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.defaultTypes">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>defaultTypes
+            <span class="apidocSignatureSpan">(types)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.extend">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>extend
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.formidable">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>formidable
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.isValid">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>isValid
+            <span class="apidocSignatureSpan">(method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.multipart">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>multipart
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.parseBody">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>parseBody
+            <span class="apidocSignatureSpan">(ctx, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.parseQs">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>parseQs
+            <span class="apidocSignatureSpan">(str, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-better-body.utils.setParsers">
+            function <span class="apidocSignatureSpan">koa-better-body.utils.</span>setParsers
+            <span class="apidocSignatureSpan">(ctx, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-better-body" id="apidoc.module.koa-better-body">module koa-better-body</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.koa-better-body" id="apidoc.element.koa-better-body.koa-better-body">
+        function <span class="apidocSignatureSpan"></span>koa-better-body
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function koaBetterBody(options) {
+  options = utils.defaultOptions(options)
+
+  return function * plugin (next) {
+    if (options.strict &amp;&amp; !utils.isValid(this.method)) {
+      return yield * next
+    }
+
+    try {
+      utils.setParsers(this, options)
+      yield * utils.parseBody(this, options, next)
+    } catch (err) {
+      if (!options.onerror) throw err
+      options.onerror(err, this)
+    }
+
+    yield * next
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils" id="apidoc.element.koa-better-body.utils">
+        function <span class="apidocSignatureSpan">koa-better-body.</span>utils
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== 'string') {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it's called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-better-body.utils" id="apidoc.module.koa-better-body.utils">module koa-better-body.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.utils" id="apidoc.element.koa-better-body.utils.utils">
+        function <span class="apidocSignatureSpan">koa-better-body.</span>utils
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== 'string') {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it's called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.bodyParsers" id="apidoc.element.koa-better-body.utils.bodyParsers">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>bodyParsers
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bodypParsers(app) {
+  Object.keys(request).forEach(function (key) {
+    app.request[key] = request[key]
+  })
+  Object.keys(response).forEach(function (key) {
+    app.response[key] = response[key]
+  })
+  return app
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ ctx.app.querystring = opts.querystring ||
+   opts.qs || // alias
+   ctx.app &amp;&amp; ctx.app.querystring ||
+   ctx.app &amp;&amp; ctx.app.qs || // alias
+   ctx.querystring ||
+   ctx.qs // alias
+
+ utils.<span class="apidocCodeKeywordSpan">bodyParsers</span>(ctx)
+ ctx.request.multipart = utils.multipart.bind(ctx)
+ return ctx
+}
+
+/**
+* &gt; Formidable wrapper as multipart parser to make
+* thunk that later can be yielded. Also allows you to pass
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.defaultOptions" id="apidoc.element.koa-better-body.utils.defaultOptions">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>defaultOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultOptions(options) {
+  options = typeof options === 'object' ? options : {}
+  var types = utils.defaultTypes(options.extendTypes)
+  options = utils.extend({
+    fields: false,
+    files: false,
+    multipart: true,
+    textLimit: false,
+    formLimit: false,
+    jsonLimit: false,
+    jsonStrict: true,
+    detectJSON: false,
+    bufferLimit: false,
+    buffer: false,
+    strict: true,
+
+    // query string `parse` options
+    delimiter: '&amp;',
+    decodeURIComponent: utils.querystring.unescape,
+    maxKeys: 1000
+  }, options)
+
+  options.delimiter = options.sep || options.delimiter
+  options.formLimit = options.formLimit || options.urlencodedLimit
+  options.extendTypes = types
+  options.onerror = options.onÐ•rror || options.onerror
+  options.onerror = typeof options.onerror === 'function'
+    ? options.onerror
+    : false
+  options.delimiter = typeof options.delimiter === 'string'
+    ? options.delimiter
+    : '&amp;'
+
+  if (typeof options.handler !== 'function') {
+    options.handler = function * noopHandler () {}
+  }
+  if (typeof options.detectJSON !== 'function') {
+    options.detectJSON = function detectJSON () {
+      return false
+    }
+  }
+
+  return options
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param  {Object} `options` see more on [options section](#options)
+ * @return {GeneratorFunction}
+ * @api public
+ */
+
+module.exports = function koaBetterBody (options) {
+  options = utils.<span class="apidocCodeKeywordSpan">defaultOptions</span>(options)
+
+  return function * plugin (next) {
+if (options.strict &amp;&amp; !utils.isValid(this.method)) {
+  return yield * next
+}
+
+try {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.defaultTypes" id="apidoc.element.koa-better-body.utils.defaultTypes">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>defaultTypes
+        <span class="apidocSignatureSpan">(types)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultTypes(types) {
+  types = typeof types === 'object' ? types : {}
+  return utils.extend({
+    multipart: [
+      'multipart/form-data'
+    ],
+    text: [
+      'text/*'
+    ],
+    form: [
+      'application/x-www-form-urlencoded'
+    ],
+    json: [
+      'application/json',
+      'application/json-patch+json',
+      'application/vnd.api+json',
+      'application/csp-report'
+    ],
+    buffer: [
+      'text/*'
+    ]
+  }, types)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param  {Object} `options`
+ * @return {Object}
+ * @api private
+ */
+utils.defaultOptions = function defaultOptions (options) {
+options = typeof options === 'object' ? options : {}
+var types = utils.<span class="apidocCodeKeywordSpan">defaultTypes</span>(options.extendTypes)
+options = utils.extend({
+  fields: false,
+  files: false,
+  multipart: true,
+  textLimit: false,
+  formLimit: false,
+  jsonLimit: false,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.extend" id="apidoc.element.koa-better-body.utils.extend">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>extend
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(o) {
+  if (!isObject(o)) { o = {}; }
+
+  var len = arguments.length;
+  for (var i = 1; i &lt; len; i++) {
+    var obj = arguments[i];
+
+    if (isObject(obj)) {
+      assign(o, obj);
+    }
+  }
+  return o;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {Object} `options`
+ * @return {Object}
+ * @api private
+ */
+utils.defaultOptions = function defaultOptions (options) {
+options = typeof options === 'object' ? options : {}
+var types = utils.defaultTypes(options.extendTypes)
+options = utils.<span class="apidocCodeKeywordSpan">extend</span>({
+  fields: false,
+  files: false,
+  multipart: true,
+  textLimit: false,
+  formLimit: false,
+  jsonLimit: false,
+  jsonStrict: true,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.formidable" id="apidoc.element.koa-better-body.utils.formidable">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>formidable
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingForm(opts) {
+  if (!(this instanceof IncomingForm)) return new IncomingForm(opts);
+  EventEmitter.call(this);
+
+  opts=opts||{};
+
+  this.error = null;
+  this.ended = false;
+
+  this.maxFields = opts.maxFields || 1000;
+  this.maxFieldsSize = opts.maxFieldsSize || 2 * 1024 * 1024;
+  this.keepExtensions = opts.keepExtensions || false;
+  this.uploadDir = opts.uploadDir || (os.tmpdir &amp;&amp; os.tmpdir()) || os.tmpDir();
+  this.encoding = opts.encoding || 'utf-8';
+  this.headers = null;
+  this.type = null;
+  this.hash = opts.hash || false;
+  this.multiples = opts.multiples || false;
+
+  this.bytesReceived = null;
+  this.bytesExpected = null;
+
+  this._parser = null;
+  this._flushing = 0;
+  this._fieldsSize = 0;
+  this.openedFiles = [];
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.isValid" id="apidoc.element.koa-better-body.utils.isValid">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>isValid
+        <span class="apidocSignatureSpan">(method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValid(method) {
+  return ['GET', 'HEAD', 'DELETE'].indexOf(method.toUpperCase()) === -1
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @api public
+ */
+
+module.exports = function koaBetterBody (options) {
+  options = utils.defaultOptions(options)
+
+  return function * plugin (next) {
+if (options.strict &amp;&amp; !utils.<span class="apidocCodeKeywordSpan">isValid</span>(this.method)) {
+  return yield * next
+}
+
+try {
+  utils.setParsers(this, options)
+  yield * utils.parseBody(this, options, next)
+} catch (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.multipart" id="apidoc.element.koa-better-body.utils.multipart">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>multipart
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function multipart(options) {
+  var ctx = this
+
+  return function thunk (done) {
+    var buff = ''
+    var fields = {}
+    var files = []
+    var form = options.IncomingForm instanceof utils.formidable.IncomingForm
+      ? options.IncomingForm
+      : new utils.formidable.IncomingForm(options)
+
+    form.on('error', done)
+    form.on('aborted', done)
+    form.on('file', function (name, value) {
+      files.push(value)
+      fields[name] = fields[name] || []
+      fields[name].push(value)
+    })
+    form.on('field', function (name, value) {
+      buff += name + '=' + value + options.delimiter
+    })
+    form.on('end', function () {
+      fields = buff &amp;&amp; buff.length
+        ? utils.extend({}, utils.parseQs(buff.slice(0, -1), options), fields)
+        : fields
+
+      done(null, {
+        fields: fields,
+        files: files
+      })
+    })
+    form.parse(ctx.req)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var limit = options.textLimit
+    var body = yield ctx.request.text(limit)
+
+    ctx.request.body = body
+    return yield * next
+  }
+  if (options.multipart &amp;&amp; ctx.request.is(options.extendTypes.multipart)) {
+    var result = yield ctx.request.<span class="apidocCodeKeywordSpan">multipart</span>(options)
+    ctx.request[fields] = result.fields
+    ctx.request[files] = result.files
+    return yield * next
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.parseBody" id="apidoc.element.koa-better-body.utils.parseBody">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>parseBody
+        <span class="apidocSignatureSpan">(ctx, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* parseBody(ctx, options, next) {<span class="apidocCodeCommentSpan"> /* eslint complexity: [2, 12] */
+</span>  var fields = typeof options.fields === 'string' ? options.fields : 'fields'
+  var files = typeof options.files === 'string' ? options.files : 'files'
+  var custom = options.extendTypes.custom
+
+  if (custom &amp;&amp; custom.length &amp;&amp; ctx.request.is(custom)) {
+    yield * options.handler.call(ctx, ctx, options, next)
+    return yield * next
+  }
+  if (options.detectJSON(ctx) || ctx.request.is(options.extendTypes.json)) {
+    ctx.app.jsonStrict = typeof options.jsonStrict === 'boolean' ? options.jsonStrict : true
+    ctx.request[fields] = yield ctx.request.json(options.jsonLimit)
+    return yield * next
+  }
+  if (ctx.request.is(options.extendTypes.form || options.extendTypes.urlencoded)) {
+    var res = yield ctx.request.urlencoded(options.formLimit)
+    ctx.request[fields] = res
+    return yield * next
+  }
+  if (options.buffer &amp;&amp; ctx.request.is(options.extendTypes.buffer)) {
+    ctx.request.body = yield ctx.request.buffer(options.bufferLimit)
+    return yield * next
+  }
+  if (ctx.request.is(options.extendTypes.text)) {
+    var limit = options.textLimit
+    var body = yield ctx.request.text(limit)
+
+    ctx.request.body = body
+    return yield * next
+  }
+  if (options.multipart &amp;&amp; ctx.request.is(options.extendTypes.multipart)) {
+    var result = yield ctx.request.multipart(options)
+    ctx.request[fields] = result.fields
+    ctx.request[files] = result.files
+    return yield * next
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return function * plugin (next) {
+  if (options.strict &amp;&amp; !utils.isValid(this.method)) {
+    return yield * next
+  }
+
+  try {
+    utils.setParsers(this, options)
+    yield * utils.<span class="apidocCodeKeywordSpan">parseBody</span>(this, options, next)
+  } catch (err) {
+    if (!options.onerror) throw err
+    options.onerror(err, this)
+  }
+
+  yield * next
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.parseQs" id="apidoc.element.koa-better-body.utils.parseQs">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>parseQs
+        <span class="apidocSignatureSpan">(str, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseQs(str, opts) {
+  return opts.querystring
+    ? opts.querystring.parse(str, opts)
+    : utils.querystring.parse(str, opts.delimiter, '=', opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  fields[name].push(value)
+})
+form.on('field', function (name, value) {
+  buff += name + '=' + value + options.delimiter
+})
+form.on('end', function () {
+  fields = buff &amp;&amp; buff.length
+    ? utils.extend({}, utils.<span class="apidocCodeKeywordSpan">parseQs</span>(buff.slice(0, -1), options), fields)
+    : fields
+
+  done(null, {
+    fields: fields,
+    files: files
+  })
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-better-body.utils.setParsers" id="apidoc.element.koa-better-body.utils.setParsers">
+        function <span class="apidocSignatureSpan">koa-better-body.utils.</span>setParsers
+        <span class="apidocSignatureSpan">(ctx, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setParsers(ctx, opts) {
+  ctx.app.querystring = opts.querystring ||
+    opts.qs || // alias
+    ctx.app &amp;&amp; ctx.app.querystring ||
+    ctx.app &amp;&amp; ctx.app.qs || // alias
+    ctx.querystring ||
+    ctx.qs // alias
+
+  utils.bodyParsers(ctx)
+  ctx.request.multipart = utils.multipart.bind(ctx)
+  return ctx
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return function * plugin (next) {
+if (options.strict &amp;&amp; !utils.isValid(this.method)) {
+  return yield * next
+}
+
+try {
+  utils.<span class="apidocCodeKeywordSpan">setParsers</span>(this, options)
+  yield * utils.parseBody(this, options, next)
+} catch (err) {
+  if (!options.onerror) throw err
+  options.onerror(err, this)
+}
+
+yield * next
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
